@@ -15,16 +15,16 @@ def binary_predict(number: int = 1) -> int:
         int: Число попыток
     """
     count = 0
-    left=0 #левая граница
-    right=101 #правая граница
+    left = 0
+    right = 101 
 
     while True:
         count += 1
         predict_number = (left+right)//2  # предполагаемое число
         if predict_number < number:
-            left=predict_number # сдвигаем левую границу если число больше
+            left = predict_number # сдвигаем левую границу если число больше
         elif predict_number > number:
-            right=predict_number # сдвигаем левую границу если число меньше
+            right = predict_number # сдвигаем левую границу если число меньше
         else:
             break  # выход из цикла если угадали
     return count
